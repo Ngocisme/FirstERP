@@ -1,0 +1,6 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.tips.enabled": true,
+    "workbench.statusBar.visible": true,
+    "workbench.tree.enableStickyScroll": true
+}
