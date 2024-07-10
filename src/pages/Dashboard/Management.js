@@ -1,10 +1,8 @@
 import React from "react";
-import { DataGrid } from "@mui/x-data-grid";
-import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
 import "../../assets/styles/Dashboard/Management.scss"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFile } from "@fortawesome/free-solid-svg-icons";
+import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
+
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -30,153 +28,111 @@ const rows = [
 ];
 
 const Management = () => {
-    const role = useSelector((state) => state.auth.role)
+    // const role = useSelector((state) => state.auth.role)
 
-    if(role !== 1) {
-        alert('Không đủ quyền truy cập, CÚT!!!!!!!')
-        return <Navigate to="/" />
-    }
+    // if(role !== 1) {
+    //     alert('Không đủ quyền truy cập, CÚT!!!!!!!')
+    //     return <Navigate to="/" />
+    // }
     return (
         <>
             <h3 className="my-4">Xin chào <strong>Giám Đốc</strong></h3>
-            <div className="container-fluid">
-                <div className="row g-5">
 
-                    {/* Trái */}
-                    <div className="col-7">
-                        <div className="row">
+            <Grid container spacing={2}>
 
-                            <div className="col-4 ">
-                                <div className="container-fluid no-padding br-15 border bg-white h-200">
-                                    <h3 className="text-uppercase bg-grey border-bottom br-15-tl fw-bold p-2">Tháng này đã sản xuất</h3>
-                                    <h1 className="fw-bold mt-4 ps-15">50</h1>
-                                </div>
+                <Grid item xs={12} container spacing={2}>
+                    <Grid item xs={3}>
+                        <Paper elevation={3}>
+                            <Box p={2}>
+                                <Typography variant="h4" sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
+                                    Tháng này đã sản xuất
+                                </Typography>
+                                <hr />
+                                <Typography variant="h4" sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
+                                    50 cái
+                                </Typography>
+                            </Box>
+                        </Paper>
+                    </Grid>
+
+                    <Grid item xs={9} >
+                        <Paper elevation={3} sx={{ height: '100%' }}>
+                            <Box p={2} sx={{ display: 'flex', gap: 2 }}>
+                            <Box sx={{ flex: 1, backgroundColor: 'primary.main', padding: 2, height: '100%' }}>Box 1</Box>
+                            <Box sx={{ flex: 1, backgroundColor: 'secondary.main', padding: 2, height: '100%' }}>Box 2</Box>
+                            <Box sx={{ flex: 1, backgroundColor: 'success.main', padding: 2, height: '100%' }}>Box 3</Box>
+                            </Box>
+                        </Paper>
+                    </Grid>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Paper elevation={3}>
+                        <Box p={2}>
+                            <Typography variant="h4" sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Thông tin đơn hàng</Typography>
+                            <div style={{ height: 400, width: '100%' }}>
+                                <DataGrid
+                                    rows={rows}
+                                    columns={columns}
+                                    initialState={{
+                                        pagination: {
+                                            paginationModel: { page: 0, pageSize: 5 },
+                                        },
+                                    }}
+                                    pageSizeOptions={[5, 10]}
+                                    checkboxSelection
+                                />
                             </div>
+                        </Box>
+                    </Paper>
 
-                            <div className="col-8 bg-white border br-15 h-200">
-                                <h3 className="text-uppercase p-2 fw-bold">Thông tin sản xuất</h3>
+                </Grid>
 
-                                <div className="container-fluid">
 
-                                    <div className="row ">
-                                        <div className="col-4 border br-15 mx-2 bg-white p-1 boxShadow">
-
-                                            <h4 className="text-uppercase">Kế hoạch sản xuất hôm nay</h4>
-                                            <h3 className="ps-7">24 đơn</h3>
-                                        </div>
-
-                                        <div className="col-4 border br-15 mx-2 bg-white p-1 boxShadow">
-
-                                            <h4 className="text-uppercase">Đã sản xuất hôm nay</h4>
-                                            <h3 className="ps-7">24 đơn</h3>
-                                        </div>
-
-                                        <div className="col-3 border br-15 mx-2 bg-white p-1 boxShadow">
-
-                                            <h4 className="text-uppercase">còn Tồn đọng</h4>
-                                            <h3 className="ps-5">24 đơn</h3>
-                                        </div>
-                                    </div>
-                                </div>
-
+                <Grid item xs={12}>
+                    <Paper elevation={3}>
+                        <Box p={2}>
+                            <Typography variant="h4" sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}>đơn hàng sản xuất trong tuần</Typography>
+                            <div style={{ height: 400, width: '100%' }}>
+                                <DataGrid
+                                    rows={rows}
+                                    columns={columns}
+                                    initialState={{
+                                        pagination: {
+                                            paginationModel: { page: 0, pageSize: 5 },
+                                        },
+                                    }}
+                                    pageSizeOptions={[5, 10]}
+                                    checkboxSelection
+                                />
                             </div>
+                        </Box>
+                    </Paper>
 
-                            <div className="container-fluid border bg-grey br-15 mt-3">
+                </Grid>
 
-                                <div className="container-fluid py-3">
-                                    <h2>
-                                        <FontAwesomeIcon icon={faFile} />
-                                        Thông tin đơn hàng
-                                    </h2>
-
-                                    <div style={{ height: 400, width: '100%', backgroundColor: 'white', boxShadow: ' rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px', borderRadius: '15px', border: 'none' }}>
-                                        <DataGrid
-                                            rows={rows}
-                                            columns={columns}
-                                            initialState={{
-                                                pagination: {
-                                                    paginationModel: { page: 0, pageSize: 5 },
-                                                },
-                                            }}
-                                            pageSizeOptions={[5, 10]}
-                                            checkboxSelection
-                                        />
-                                    </div>
-                                </div>
+                <Grid item xs={12}>
+                    <Paper elevation={3}>
+                        <Box p={2}>
+                            <Typography variant="h4" sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}>đơn hàng sản xuất trong tuần</Typography>
+                            <div style={{ height: 400, width: '100%' }}>
+                                <DataGrid
+                                    rows={rows}
+                                    columns={columns}
+                                    initialState={{
+                                        pagination: {
+                                            paginationModel: { page: 0, pageSize: 5 },
+                                        },
+                                    }}
+                                    pageSizeOptions={[5, 10]}
+                                    checkboxSelection
+                                />
                             </div>
-                        </div>
-                    </div>
+                        </Box>
+                    </Paper>
 
-                    {/* /// Phải */}
-                    <div className="col-5 bg-grey border br-15">
-                        <div className="row">
-                            <div className="container-fluid no-padding ">
-                                <div className="d-flex justify-content-between">
-                                    <h1>Đơn hàng sản xuất trong tuần</h1>
-                                    <input type="date" />
-                                </div>
-                                <div style={{ width: '100%',height: '100%', backgroundColor: 'white', boxShadow: ' rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px', borderRadius: '15px', border: 'none'}}>
-                                    <DataGrid
-                                        sx={{ padding: '10px',height: '100%' }}
-                                        rows={rows}
-                                        columns={columns}
-                                        initialState={{
-                                            pagination: {
-                                                paginationModel: { page: 0, pageSize: 5 },
-                                            },
-                                        }}
-                                        pageSizeOptions={[5, 10]}
-                                        checkboxSelection
-                                        autoHeight
-                                    />
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="container-fluid no-padding">
-                        <div className="d-flex justify-content-between">
-                            <h1>Đơn hàng sản xuất trong tuần</h1>
-                            <input type="date" />
-                        </div>
-                        <div className="">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td colspan="2">Larry the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                </Grid>
+            </Grid>
         </>
     )
 }

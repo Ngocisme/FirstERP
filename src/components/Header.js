@@ -27,12 +27,12 @@ const Header = () => {
 
             <Grid item xs={8}>
               <div className="">
-                <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" />
+                <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Tìm kiếm" />
               </div>
             </Grid>
 
             <Grid item xs={4}>
-              <Button variant="contained" sx={{ backgroundColor: '#FFD600', color: 'black' }}>Contained</Button>
+              <Button variant="contained" sx={{ backgroundColor: '#FFD600', color: 'black' }}>Tìm kiếm</Button>
             </Grid>
           </Grid>
         </Grid>

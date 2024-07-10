@@ -1,12 +1,7 @@
 import React from "react";
-import Sidebar from "../../components/SideBar";
-import { DataGrid } from "@mui/x-data-grid";
-import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
 import "../../assets/styles/Dashboard/Management.scss"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFile } from "@fortawesome/free-solid-svg-icons";
 import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -42,12 +37,12 @@ const rows = [
 
 const User = () => {
 
-    const role = useSelector((state) => state.auth.role)
+    // const role = useSelector((state) => state.auth.role)
 
-    if (role !== 2) {
-        alert('Không đủ quyền truy cập, CÚT!!!!!!!')
-        return <Navigate to="/" />
-    }
+    // if (role !== 2) {
+    //     alert('Không đủ quyền truy cập, CÚT!!!!!!!')
+    //     return <Navigate to="/" />
+    // }
 
     return (
         <>
