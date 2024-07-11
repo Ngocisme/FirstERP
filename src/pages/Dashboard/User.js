@@ -2,6 +2,7 @@ import React from "react";
 import "../../assets/styles/Dashboard/Management.scss"
 import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
+import HeaderHello from "../../components/HeaderHello";
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -37,16 +38,9 @@ const rows = [
 
 const User = () => {
 
-    // const role = useSelector((state) => state.auth.role)
-
-    // if (role !== 2) {
-    //     alert('Không đủ quyền truy cập, CÚT!!!!!!!')
-    //     return <Navigate to="/" />
-    // }
-
     return (
         <>
-            <h3 className="my-4">Xin chào <strong>Sale</strong></h3>
+            <HeaderHello />
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>

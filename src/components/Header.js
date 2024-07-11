@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', paddingTop: '1.5vw', paddingBottom: '1.1vw', paddingLeft: '1vw' }}>
       <Grid container justifyContent='space-between' alignItems='center'>
-        <Grid item xs={6} md={8}>
+        <Grid item xs={4} md={6}>
           <Grid container spacing={2} alignItems='center'>
 
             <Grid item xs={8}>
@@ -37,7 +37,7 @@ const Header = () => {
           </Grid>
         </Grid>
 
-        <Grid item xs={6} md={4} container justifyContent='flex-end' spacing={2} sx={{ paddingTop: '1vw' }}>
+        <Grid item xs={8} md={6} container justifyContent='flex-end' spacing={2} sx={{ paddingTop: '1vw' }}>
           <Grid container spacing={2} alignItems='center'>
             <Grid item>
               <Typography variant="" sx={{}}>
