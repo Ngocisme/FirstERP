@@ -4,6 +4,11 @@ import { List, ListItem, ListItemIcon, ListItemText, ListSubheader } from '@mui/
 import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Person4Icon from '@mui/icons-material/Person4';
+import ReceiptIcon from '@mui/icons-material/Receipt';
+import FactoryIcon from '@mui/icons-material/Factory';
+import SettingsIcon from '@mui/icons-material/Settings';
+import Inventory2Icon from '@mui/icons-material/Inventory2';
+import EngineeringIcon from '@mui/icons-material/Engineering';
 
 const Sidebar = () => {
 
@@ -23,13 +28,29 @@ const Sidebar = () => {
           <ListItemIcon><HomeIcon /></ListItemIcon>
           <ListItemText primary="Trang chủ" />
         </ListItem>
-        <ListItem button component={Link} to="/manager">
-          <ListItemIcon><Person4Icon /></ListItemIcon>
-          <ListItemText primary="Giám đốc" />
+        <ListItem button component={Link} to="/">
+          <ListItemIcon><ReceiptIcon /></ListItemIcon>
+          <ListItemText primary="Đơn hàng" />
         </ListItem>
-        <ListItem button component={Link} to="/user">
-          <ListItemIcon><AccountCircleIcon /></ListItemIcon>
-          <ListItemText primary="Sale" />
+        <ListItem button component={Link} to="/">
+          <ListItemIcon><FactoryIcon /></ListItemIcon>
+          <ListItemText primary="Sản xuất" />
+        </ListItem>
+        <ListItem button component={Link} to="/">
+          <ListItemIcon><Person4Icon /></ListItemIcon>
+          <ListItemText primary="Khách hàng" />
+        </ListItem>
+        <ListItem button component={Link} to="/">
+          <ListItemIcon><SettingsIcon /></ListItemIcon>
+          <ListItemText primary="Thông tin kỹ thuật" />
+        </ListItem>
+        <ListItem button component={Link} to="/">
+          <ListItemIcon><Inventory2Icon /></ListItemIcon>
+          <ListItemText primary="Sản phẩm" />
+        </ListItem>
+        <ListItem button component={Link} to="/">
+          <ListItemIcon><EngineeringIcon /></ListItemIcon>
+          <ListItemText primary="Nhân sự" />
         </ListItem>
       </List>
     </div>

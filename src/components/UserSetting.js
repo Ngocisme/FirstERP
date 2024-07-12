@@ -35,7 +35,7 @@ const UserSetting = () => {
                   >
                         <List>
                               <ListItem button>
-                                    <ListItemText primary="Notification 1" />
+                                    <ListItemText primary="Để chức vụ" />
                               </ListItem>
                               <Logout />
                         </List>

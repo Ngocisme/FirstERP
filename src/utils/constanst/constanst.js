@@ -1,4 +1,4 @@
-export const DOMAIN = "http://localhost:1702/api/v1/";
+export const DOMAIN = 'http://localhost:1702/api/v1/';
 
 export const API = {
       // --------------- AUTHENTICATION ---------------
@@ -60,11 +60,9 @@ export const API = {
     };
     
     export const ROLE = {
-      ADMIN: 5,
-      STUDENT: 2,
-      MARKETING_CORDINATOR: 3,
-      MARKETING_MANAGER: 4,
-      GUEST: 1,
+      DIRECTOR: 1,
+      MANAGER: 2,
+      SALE: 1
     };
     
     export const STATUS_CODE = {

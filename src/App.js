@@ -13,6 +13,7 @@ import Home from "./pages/Dashboard/Home.js";
 import Management from "./pages/Dashboard/Management.js";
 import User from "./pages/Dashboard/User.js";
 import NotFound from "./pages/Dashboard/NotFound.js";
+import Sale from "./pages/Dashboard/Sale.js";
 
 function App() {
  
@@ -22,9 +23,10 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/" element={<Layout />}>
-            <Route path="/" element={<Home />} />
+            {/* <Route path="/" element={<Home />} /> */}
             <Route path="/manager" element={<Management />} />
             <Route path="/user" element={<User />} />
+            <Route path="/sale" element={<Sale />} />
         </Route>
 
         <Route path="/404" element={<NotFound />} />
